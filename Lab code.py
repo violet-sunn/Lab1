@@ -8,14 +8,11 @@ directories = {
     '2': ['10006', '5400 028765', '5455 002299'],
     '3': []
 }
-i = 1
-
-
 def p(document_num):
     for x in documents:
         if x['number'] == document_num:
-            return x['name']
-    return 'Документа с таким номером не существует'
+            return (x['name'])
+    return "Документа с таким номером не существует"
 
 
 def s(document_num):
@@ -23,6 +20,15 @@ def s(document_num):
         if document_num in directories[k]:
             return k
     return "Документ не найден в базе"
+def add_shelf():
+    number = int(input("Введите номер новой полки: "))
+    for i in directories:
+        if i['number']==number:
+            return 'Такая полка уже существует'
+        else:
+            directories[number] = []
+            print('полка добавлена, текущий список полок ')
+            for i in directories:
+                print(directories[number], end=' ')
+print(add_shelf())
 
-
-p('100000000000000006')
