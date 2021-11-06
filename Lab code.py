@@ -8,6 +8,9 @@ directories = {
     '2': ['10006', '5400 028765', '5455 002299'],
     '3': []
 }
+i = 1
+
+
 def p(document_num):
     for x in documents:
         if x['number'] == document_num:
@@ -29,5 +32,11 @@ def i():
                 num=y
         print(f" №: {x['number']}, тип: {x['type']}, владелец: {x['name']}, полка хранения: {num}")
 
+def ds(shelf_number):
+    if directories[shelf_number] == []:
+        del directories[shelf_number]
+        return 'Полка удалена. Текущий перечень полок:', directories.keys()
+    else:
+        return 'На полке есть', len(directories[shelf_number]), 'документа, удалите их перед удалением полки. Текущий перечень полок: ', directories.keys()
 
-
+print(ds('2'))
