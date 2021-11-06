@@ -15,6 +15,30 @@ def p(document_num):
     return "Документа с таким номером не существует"
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def s(document_num):
     for k in directories:
         if document_num in directories[k]:
