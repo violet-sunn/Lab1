@@ -52,3 +52,10 @@ def ds():
 
 
 while input() != 'q':
+    funcs = {
+        'p': p(),
+        's': s(),
+        'i': i(),
+        'ads': ads(),
+        'ds': ds()
+    }
