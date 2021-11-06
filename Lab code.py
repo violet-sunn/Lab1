@@ -8,9 +8,6 @@ directories = {
     '2': ['10006', '5400 028765', '5455 002299'],
     '3': []
 }
-i = 1
-
-
 def p(document_num):
     for x in documents:
         if x['number'] == document_num:
@@ -24,5 +21,13 @@ def s(document_num):
             return k
     return "Документ не найден в базе"
 
+def i():
+    for x in documents:
+        num=0
+        for y in directories:
+            if x['number'] in directories[y]:
+                num=y
+        print(f" №: {x['number']}, тип: {x['type']}, владелец: {x['name']}, полка хранения: {num}")
 
-p('100000000000000006')
+
+
