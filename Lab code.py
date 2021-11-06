@@ -8,14 +8,16 @@ directories = {
     '2': ['10006', '5400 028765', '5455 002299'],
     '3': []
 }
-def p(document_num):
+def p():
+    document_num = input("Введите номер документа: ")
     for x in documents:
         if x['number'] == document_num:
             return x['name']
     return 'Документа с таким номером не существует'
 
 
-def s(document_num):
+def s():
+    document_num = input("Введите номер документа: ")
     for k in directories:
         if document_num in directories[k]:
             return k
@@ -29,25 +31,24 @@ def i():
                 num=y
         print(f" №: {x['number']}, тип: {x['type']}, владелец: {x['name']}, полка хранения: {num}")
 
-def add_shelf():
+def ads():
     number = input("Введите номер новой полки: ")
     for i in list(directories):
         if i==number:
             return 'est'
     directories[number] = number
     print('Полка добавлена, текущий список полок ')
-    print(','.join(list(directories)), end = '')
+    print(', '.join(list(directories)), end = '')
     return '.'
-print(add_shelf())
 
-def ds(shelf_number):
+def ds():
+    shelf_number = input("Введите номер новой полки: ")
     if directories[shelf_number] == []:
         del directories[shelf_number]
-        print('Полка удалена. Текущий перечень полок:', ','.join(list(directories)), end = '')
+        print('Полка удалена. Текущий перечень полок:', ', '.join(list(directories)), end = '')
     else:
         print('На полке есть', len(directories[shelf_number]), 'документа, удалите их перед удалением полки. Текущий перечень полок: ', ','.join(list(directories)), end ='')
     return '.'
 
-print(ds('3'))
 
-
+while input() != 'q':
