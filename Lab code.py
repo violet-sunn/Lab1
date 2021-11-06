@@ -34,19 +34,20 @@ def add_shelf():
     for i in list(directories):
         if i==number:
             return 'est'
-        
     directories[number] = number
     print('Полка добавлена, текущий список полок ')
-    print(list(directories))
+    print(','.join(list(directories)), end = '')
+    return '.'
 print(add_shelf())
 
 def ds(shelf_number):
     if directories[shelf_number] == []:
         del directories[shelf_number]
-        return 'Полка удалена. Текущий перечень полок:', directories.keys()
+        print('Полка удалена. Текущий перечень полок:', ','.join(list(directories)), end = '')
     else:
-        return 'На полке есть', len(directories[shelf_number]), 'документа, удалите их перед удалением полки. Текущий перечень полок: ', directories.keys()
+        print('На полке есть', len(directories[shelf_number]), 'документа, удалите их перед удалением полки. Текущий перечень полок: ', ','.join(list(directories)), end ='')
+    return '.'
 
-print(ds('2'))
+print(ds('3'))
 
 
