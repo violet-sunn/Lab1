@@ -30,15 +30,14 @@ def i():
         print(f" №: {x['number']}, тип: {x['type']}, владелец: {x['name']}, полка хранения: {num}")
 
 def add_shelf():
-    number = int(input("Введите номер новой полки: "))
-    for i in directories:
-        if i['number']==number:
-            return 'Такая полка уже существует'
-        else:
-            directories[number] = []
-            print('полка добавлена, текущий список полок ')
-            for i in directories:
-                print(directories[number], end=' ')
+    number = input("Введите номер новой полки: ")
+    for i in list(directories):
+        if i==number:
+            return 'est'
+        
+    directories[number] = number
+    print('Полка добавлена, текущий список полок ')
+    print(list(directories))
 print(add_shelf())
 
 def ds(shelf_number):
