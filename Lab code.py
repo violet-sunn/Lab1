@@ -149,7 +149,6 @@ while True:
     elif command == 'm':
         print(m())
     elif command == 'q':
-        print('Всего хорошего!')
         break
     else:
         print('Такой команды не существует')
