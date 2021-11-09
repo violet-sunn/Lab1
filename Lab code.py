@@ -50,7 +50,7 @@ def ads():
 
 
 def ds():
-    shelf_number = input("Введите номер новой полки: ")
+    shelf_number = input("Введите номер удаляемой полки: ")
     if shelf_number in directories.keys():
         if directories[shelf_number] == []:
             del directories[shelf_number]
