@@ -15,16 +15,16 @@ def p():
     document_num = input("Введите номер документа: ")
     for x in documents:
         if x['number'] == document_num:
-            return x['name']
+            return f"Владелец документа: {x['name']}"
     return 'Документа с таким номером не существует'
 
 
 def s():
-    document_num = input("Введите номер документа: ")
-    for k in directories:
+     document_num = input("Введите номер документа: ")
+     for k in directories:
         if document_num in directories[k]:
-            return k
-    return "Документ не найден в базе"
+            return f'Документ хранится на полке: {k}'
+     return "Документ не найден в базе"
 
 
 def l():
@@ -51,14 +51,18 @@ def ads():
 
 def ds():
     shelf_number = input("Введите номер новой полки: ")
-    if directories[shelf_number] == []:
-        del directories[shelf_number]
-        print('Полка удалена. Текущий перечень полок:', ', '.join(list(directories)), end='')
-    else:
-        print('На полке есть', len(directories[shelf_number]),
+    if shelf_number in directories.keys():
+        if directories[shelf_number] == []:
+            del directories[shelf_number]
+            print('Полка удалена. Текущий перечень полок:', ', '.join(list(directories)), end='')
+        else:
+            print('На полке есть', len(directories[shelf_number]),
               'документа, удалите их перед удалением полки. Текущий перечень полок: ', ','.join(list(directories)),
               end='')
+     else:
+                print('Такой полки не существует')
     return '.'
+
 
 #TASK 2
 
